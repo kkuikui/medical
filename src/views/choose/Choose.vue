@@ -5,15 +5,15 @@
       <i class="cubeic-close"></i>
       <i class="cubeic-more"></i>
     </header>
-    <h2>自助扫码</h2>
-    <div class="print-tips">检查结果识别码</div>
-    <div class="barCode">
-      <img src="./barCode.png" alt="" width="100%">
+    <div class="choose-title">请选择你的身份</div>
+    <div class="code">
+      <img src="./log1.png" alt="" width="100%">
+      <p>我是患者</p>
     </div>
     <div class="code">
-      <img src="./code.png" alt="" width="100%">
+      <img src="./log2.png" alt="" width="100%">
+      <p>我是医生</p>
     </div>
-    <div class="print-t">在自助设备上直接扫描或提供给登记台人员扫描获取检查结果</div>
     <v-footer></v-footer>
   </div>
 </template>
@@ -66,11 +66,11 @@
       color #333
       margin 40px 0 30px 0
     }
-    .print-tips{
-      font-size 1.1rem
-      color #666
-      line-height 30px
-      padding 0 0 20px 17px
+    .choose-title{
+      font-size 1.25rem
+      color #333
+      line-height 40px
+      padding 20px 0 10px 17px
     }
     .print-t{
       font-size 1.1rem
@@ -78,14 +78,14 @@
       line-height 30px
       padding 20px
     }
-    .barCode{
-      width 80%
-      margin 0 auto
-    }
     .code{
-      width 60%
+      width 40%
       margin 0 auto
       padding 40px 0 0 0
+      text-align center
+      color #666
+      line-height 40px
+      font-size 1.25rem
     }
   }
 </style>

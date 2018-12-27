@@ -1,35 +1,28 @@
 <template>
-  <div class="skill-box">
+  <div class="setp-box">
     <header class="header">
       <i class="cubeic-back" @click="$router.go(-1)"></i>
       <i class="cubeic-close"></i>
       <i class="cubeic-more"></i>
     </header>
-    <div class="skill-grund">
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
-      <div class="skill-item">技能标签一</div>
+    <div class="setp-succss">
+      <img src="./sucss.png" alt="" width="100%">
+      <p>资料提交成功！</p>
     </div>
-    <button class="skill-btn"><i class="cubeic-add"></i>添加自定义</button>
-    <a class="submit" href="" >确认</a>
+    <a class="submit" href="" >进入平台首页</a>
     <v-footer></v-footer>
   </div>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus">
-  .skill-box{
+  .setp-box{
     height 100vh
     .header{
-      background-color #f1f1f1
       height 50px
       border-bottom 1px solid #DDD
       position relative
+      background-color #f1f1f1
       .cubeic-back{
         position absolute
         top 10px
@@ -69,51 +62,36 @@
       color #333
       margin 40px 0 30px 0
     }
-    .skill-tips{
-      font-size 1.1rem
-      color #666
-      line-height 30px
-      padding 0 0 20px 17px
-    }
-    .skill-t{
-      font-size 1.1rem
-      color #de7eb7
-      line-height 30px
-      padding 20px
-    }
-    .barCode{
-      width 80%
-      margin 0 auto
-    }
-    .code{
-      width 60%
-      margin 0 auto
-      padding 40px 0 0 0
-    }
-    .skill-item{
-      width 33%
-      float left
-      height 50px
-      line-height 50px
-      text-align center
-      color #666
-      font-size 1.1rem
-      border-right 1px solid #DDD
-      border-bottom 1px solid #DDD
-    }
-    .skill-item:nth-child(3n){
-      border-right 0
-    }
-    .skill-btn{
-      border 1px dashed #DDD
-      background-color #f1f1f1
-      width 90%
-      margin 30px 5% 60px 5%
-      height 50px
-      line-height 50px
-      text-align center
-      font-size 1.1rem
-      color #666
+    .setp-input{
+      background-color #fff
+      .setp-item{
+        height 60px
+        padding 8px 0 3px 0
+        border-bottom 1px solid #DDD
+        margin 0 20px
+        &:last-child{
+          border-bottom 0
+        }
+        i{
+          color #DDD
+          font-size 1.5rem
+          display inline-block
+          margin 13px 10px 0 0
+          float left
+        }
+        input{
+          height 50px
+          width calc(100% - 50px)
+          font-size 1.1rem
+          color #666
+          &:focus{
+            outline none
+          }
+          &::placeholder{
+            color #999
+          }
+        }
+      }
     }
     .submit{
       display block
@@ -129,6 +107,24 @@
       color #FFF
       &:focus{
         outline none
+      }
+    }
+    .setp-succss{
+      width 70%
+      margin 0 auto
+      padding 40px 0 0 0
+      text-align center
+      color #666
+      line-height 40px
+      font-size 1.25rem
+    }
+    .go-reg{
+      font-size 1.1rem
+      color #999
+      text-align center
+      padding 30px 0
+      a{
+        color #dd7eb6
       }
     }
   }

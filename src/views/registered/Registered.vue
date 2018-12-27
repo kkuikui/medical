@@ -21,7 +21,7 @@
         <a href="">获取验证码</a>
       </div>
     </div>
-    <button class="submit">注册</button>
+    <a class="submit" href="#/regsuccess">注册</a>
     <div class="go-reg">
       已有账号？<a href="">请登录</a>
     </div>
@@ -132,6 +132,8 @@
       width 90%
       margin 50px auto 0 auto
       height 50px
+      line-height 50px
+      text-align center
       background-color #dd7eb6
       border-radius 50px
       font-size 1.1rem

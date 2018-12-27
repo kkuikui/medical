@@ -1,27 +1,48 @@
 <template>
-  <div class="print-box">
+  <div class="share-box">
     <header class="header">
       <i class="cubeic-back" @click="$router.go(-1)"></i>
       <i class="cubeic-close"></i>
       <i class="cubeic-more"></i>
     </header>
-    <h2>自助扫码</h2>
-    <div class="print-tips">检查结果识别码</div>
-    <div class="barCode">
-      <img src="./barCode.png" alt="" width="100%">
-    </div>
-    <div class="code">
-      <img src="./code.png" alt="" width="100%">
-    </div>
-    <div class="print-t">在自助设备上直接扫描或提供给登记台人员扫描获取检查结果</div>
+    <h2>分享结果</h2>
+    <div class="share-tips">张*丰 [ 男 / 60岁 ]</div>
+    <cube-radio-group>
+      <cube-radio
+        key="1"
+        option="1"
+        v-model="selected4">
+        不使用安全保护
+      </cube-radio>
+      <cube-radio
+        key="2"
+        option="2"
+        v-model="selected4">
+        使用规则进行安全保护
+        <div class="share-chb">
+          <span>限制分享数据打开时间</span>
+          <cube-radio-group v-model="selected3" :options="options3" :horizontal="true" />
+          <span>打开数据需要密码</span>
+          <cube-radio-group v-model="selected1" :options="options1" />
+        </div>
+      </cube-radio>
+      <cube-radio
+        key="3"
+        option="3"
+        v-model="selected4">
+        允许对方查看其它检查记录
+      </cube-radio>
+    </cube-radio-group>
+    <button class="submit">转发</button>
     <v-footer></v-footer>
   </div>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus">
-  .print-box{
+  .share-box{
     height 100vh
+    padding-bottom 50px
     .header{
       background-color #f1f1f1
       height 50px
@@ -66,26 +87,32 @@
       color #333
       margin 40px 0 30px 0
     }
-    .print-tips{
+    .share-tips{
       font-size 1.1rem
       color #666
       line-height 30px
       padding 0 0 20px 17px
     }
-    .print-t{
+    .share-t{
       font-size 1.1rem
       color #de7eb7
       line-height 30px
       padding 20px
     }
-    .barCode{
-      width 80%
-      margin 0 auto
-    }
-    .code{
-      width 60%
-      margin 0 auto
-      padding 40px 0 0 0
+    .submit{
+      display block
+      border 0
+      width 90%
+      margin 50px auto 0 auto
+      height 50px
+      background-color #dd7eb6
+      border-radius 50px
+      font-size 1.1rem
+      color #FFF
+      box-shadow 0 10px 10px rgba(221,126,182,0.3)
+      &:focus{
+        outline none
+      }
     }
   }
 </style>
@@ -98,6 +125,41 @@ import footer from '../../components/footer/Footer'
 export default {
   data () {
     return {
+      selected4: '1',
+      selected3: '3',
+      options3: [
+        {
+          label: '10分钟内',
+          value: '1'
+        },
+        {
+          label: '30分钟内',
+          value: '2'
+        },
+        {
+          label: '1小时内',
+          value: '3'
+        },
+        {
+          label: '24小时内',
+          value: '4'
+        }
+      ],
+      selected1: '1',
+      options1: [
+        {
+          label: '不需要密码保护',
+          value: '1'
+        },
+        {
+          label: '病人手机号码后6位',
+          value: '2'
+        },
+        {
+          label: '病人姓名',
+          value: '3'
+        }
+      ]
     }
   },
   created () {
